@@ -1,173 +1,112 @@
-﻿/*
- * by Psycho
+// Damage reduction from https://forums.bistudio.com/forums/topic/198136-reducing-player-damage/
 
- * Arguments:
- * 0: Unit That Was Hit (Object)
- * 1: Hit Selection (String)
- * 2: Damage (Number)
- * 3: Shooter (object)
- * 4: Projectile (string)
- * 5: HitPartIndex (number)
- * 6: Instigator (object)
- * 7: HitPoint CfgName (String)
+// Only damage from last applied handleDamage EH is taken into consideration by the engine
+// Apply a new EH so as we can override the damage applied
+params ["_unit", "_hitSelection", "_damage","_source","_projectile","_hitPartIndex", "_instigator", "_hitPoint"];
 
- * Return Value:
- * Damage
-*/
+// Damage multipliers.  The damage of each projectile will be multiplied by this number.
+private _damageMultiplierHead = 0.3;
+private _damageMultiplierBody = 0.25;
+private _damageMultiplierLimbs = 0.15;
+private _damageMultiplierOverall = 0.25;
 
-/*		allHitPointsDamage
-[
-	["HitFace","HitNeck","HitHead","HitPelvis","HitAbdomen","HitDiaphragm","HitChest","HitBody","HitArms","HitHands","HitLegs"],
-	["face_hub","neck","head","pelvis","spine1","spine2","spine3","body","arms","hands","legs"],
-	[0,0,0,0,0,0,0,0,0,0,0]
-]
-*/
+// Damage limits.  Each projectile will be limited to a max of this much damage.
+private _limitHead = 0.9;
+private _limitBody = 0.25;
+private _limitLimbs = 0.1;
+private _limitOverall = 0.25;
 
-params [
-	"_unit",			// Object the event handler is assigned to.
-	"_hitSelection",	// Name of the selection where the unit was damaged. "" for over-all structural damage, "?" for unknown selections.
-	"_damage",			// Resulting level of damage for the selection.
-	"_source",			// The source unit (shooter) that caused the damage.
-	"_projectile",		// Classname of the projectile that caused inflicted the damage. ("" for unknown, such as falling damage.) (String)
-	"_hitPartIndex",	// Hit part index of the hit point, -1 otherwise.
-	"_instigator",		// Person who pulled the trigger. (Object)
-	"_hitPoint"			// hit point Cfg name (String)
-];
+private _oldDamage = 0;
+if (_hitSelection isEqualTo "") then {_oldDamage = damage _unit} else {_oldDamage = _unit getHit _hitSelection};
+private _newDamage = _damage - _oldDamage max 0;
+private _incomingDamage = _newDamage;
+private _playerHealth = damage _unit;
 
-// remote Units
-if !(local _unit) exitWith {false};
-if (_damage == 0) exitWith {[_unit, _hitPartIndex] call AIS_Damage_fnc_exitDamageHandler};
-// dead unit
-if (_unit getVariable ["AIS_UnitIsDead", false]) exitWith {0.89};
-// unknown part selection
-if (_hitSelection == "?") exitWith {[_unit, _hitPartIndex] call AIS_Damage_fnc_exitDamageHandler};
-// new damage of the selected part
-private _new_damage = if (_hitPartIndex >= 0) then {_damage - (_unit getHitIndex _hitPartIndex)} else {_damage - (damage _unit)};
+// Infantry selections
+// Keep in mind that if revive is enabled then incapacitation may occur at around 0.7 damage.
+// "": The overall damage that determines the damage value of the unit. Unit dies at damage equal to or above 1
+// "face_hub": Unit dies at damage equal to or above 1
+// "neck": Unit dies at damage equal to or above 1
+// "head": Unit dies at damage equal to or above 1
+// "pelvis": Unit dies at damage equal to or above 1
+// "spine1": Unit dies at damage equal to or above 1
+// "spine2": Unit dies at damage equal to or above 1
+// "spine3": Unit dies at damage equal to or above 1
+// "body": Unit dies at damage equal to or above 1
+// "arms": Unit doesn't die with damage to this part
+// "hands": Unit doesn't die with damage to this part
+// "legs": Unit doesn't die with damage to this part
 
-// define where the damage come from --> possible outputs: "crash", "smallfire", "bigfire", "falling", "bullet", "grenade", "baaam"
-_damageType = [_unit, _hitSelection, _new_damage, _source, _projectile, _hitPartIndex] call AIS_Damage_fnc_verifyDamageType;
+// Do any other damage calculations here
+// _damage is the previous damage plus any new damage and will be applied
+// as the total damage the unit has for this selection once this EH returns
 
-// handle the damage from a fire
-if (_damageType isEqualTo "smallfire") exitWith {[_unit, _hitPartIndex] call AIS_Damage_fnc_exitDamageHandler};
-if (_damageType isEqualTo "bigfire") then {
-	_fire_damage = _unit getVariable ["ais_fireDamage", 0];
-	// fire damage is everytime at index -1, part "" --> set the part to "body" and avoid real overall damage
-	_hitSelection = "body";
-	_this set [1, _hitSelection];
-	_new_damage = _fire_damage;	// point where we can change the influence of fire
-	_unit setVariable ["ais_fireDamage", 0];
-};
-
-// exit if the damage is only minor or we have a negative hitpart index
-if (_new_damage < 0.05) exitWith {[_unit, _hitPartIndex] call AIS_Damage_fnc_exitDamageHandler};
-
-// handle the damage of falling (adapted from ACE3)
-if (_damageType isEqualTo "falling") then {
-    if !(_hitSelection in ["", "legs"]) then {
-		_new_damage = [
-			_new_damage * 0.5,
-			_new_damage * abs(_unit getVariable ["ais_impactVelocity", _impactVelocity]) / 50
-		] select (_hitSelection isEqualTo "body");
-        _new_damage = if (_new_damage < 0.1) then {0}; //Filter minor falling damage to non-leg hitpoints
-    } else {
-        if (_hitSelection isEqualTo "") then {
-            _hitSelection = "legs";
-            _this set [1, _hitSelection];
-        };
-        _new_damage = _new_damage * 0.7;
-    };
-};
-
-// handle the damage of a crash. Remove the overall damage and bring the damage to a random defined body part.
-if (_damageType isEqualTo "crash") then {
-    if (_hitSelection isEqualTo "") then {
-		_hitSelection = selectRandom ["head", "hands", "legs"];
-        _this set [1, _hitSelection];
-    };
-	private _min = [1, 0.89] select (_hitSelection isEqualTo "head");
-	_new_damage = if (_new_damage < 0.1) then {0} else {_new_damage min _min};
-};
-
-
-/*
-For some reason the engine won't handle the damage to the new(changed) body part. (Bug?) The damage will everytime go to the original part.
-So we have to set the damage by ourself to the wanted hitPartIndex.
-*/
-_hitPart = [_unit, _hitSelection] call AIS_Damage_fnc_getHitIndexValue;
-_damage = (_hitPart select 2) + (_new_damage * AIS_DAMAGE_TOLLERANCE_FACTOR);
-
-// bullet/splitter impact post process effects
-if (AIS_IMPACT_EFFECTS) then {
-	if (_damageType in ["grenade", "bullet"]) then {
-		if (isPlayer _unit) then {
-			[_unit, _damage] call AIS_Effects_fnc_bulletImpact;
+// Only modify damage if it is a known projectile (leave falling damage etc alone)
+if (_newDamage > 0 && !(_projectile isEqualTo "")) then {
+	// Reduce damage by damage multiplier
+	private _damageMultiplier = _damageMultiplierBody;
+	private _upperLimit = _limitBody;
+	switch (_hitSelection) do {
+		case "face_hub";
+		case "head": {
+			_damageMultiplier = _damageMultiplierHead;
+			_upperLimit = _limitHead;
+		};
+		case "arms";
+		case "hands";
+		case "legs": {
+			_damageMultiplier = _damageMultiplierLimbs;
+			_upperLimit = _limitLimbs;
+		};
+		case "": {
+			_damageMultiplier = _damageMultiplierOverall;
+			_upperLimit = _limitOverall;
+		};
+		default { 
+			_damageMultiplier = _damageMultiplierBody;
+			_upperLimit = _limitBody;
 		};
 	};
-};
+	_newDamage = _newDamage * _damageMultiplier;
 
-// if there is no revive guarantee, handle a realistic mode. Now we have random chance to die. The risk is increasing with higer damage values and some type of damages. (explos and grenades)
-if !(AIS_REVIVE_GUARANTY) then {
-	private _critical_hit = false;
-	// vehicle blow-up is everytime critical. Set to dead...
-	if (!(isNull objectParent _unit)) then {
-		if (damage (vehicle _unit) >= 1) exitWith {
-			[_unit] call AIS_Damage_fnc_goToDead;
-		};
+	// Place an upper limit on projectile damage done at once
+	if (_newDamage > _upperLimit) then {
+		_newDamage = _upperLimit;
 	};
-	// critical hit trough explos?
-	if (_damageType in ["grenade", "baaam"] && {_hitSelection in ["pelvis", "head", "body"]}) then {
-		if (_damage > 1 && {(0.7 + ((0.05 * (_damage - 1)) * 10)) > random 2}) then {
-			_critical_hit = true;
-		};
-	};
-	// critical hit caused by a head shoot?
-	if (_damageType isEqualTo "bullet" && {_hitSelection isEqualTo "head"}) then {
-		if (_damage > 1.2 && {(0.6 + ((0.05 * (_damage - 1)) * 10)) > random 2}) then {
-			_critical_hit = true;
-		};
-	};
-	
-	// unit is instant death - no revive chance
-	if (_critical_hit) exitWith {[_unit] call AIS_Damage_fnc_goToDead};
+
+	_damage = _oldDamage + _newDamage;
 };
 
-// if a stabilized unit become new damage they won't be longer in the stbilized state
-_unit setVariable ["ais_stabilized", false, true];
+// For players ignore damage if they are incapacitated and pass damage to bis revive handler
+//if ( isPlayer _unit ) then {
+//	if ( lifeState _unit == "INCAPACITATED" ) then {
+//		//if we are incapacitated take no additional damage
+//		_damage = _oldDamage;
+//	} else {
+//		_this set[ 2, _damage ];
+//		//Call BI REVIVE HandleDamage EH passing new _damage value
+//		_damage = _this call bis_fnc_reviveEhHandleDamage;
+//	};
+//};
 
-// unit can die if they get to mutch new damage in unconscious mode
-if ((diag_tickTime > _unit getVariable ["ais_protector_delay", 0]) && {_unit getVariable ["ais_unconscious", false]}) exitWith {
-	if (_damage > 0.9) then {[_unit] call AIS_Damage_fnc_goToDead};
-	_damage = _damage min 0.89;
-	_damage
-};
+// need to integrate this from the old damge handler
+if (alive _unit
+	&& {_damage >= 1}
+	&& {!(_unit getVariable ["ais_unconscious",false])}
+	&& {_hitSelection in ["","head","face_hub","head_hit","neck","spine1","spine2","spine3","pelvis","body"]}
+) then {
+	_unit setDamage 0;
+	_unit allowDamage false;
+	_amountOfDamage = 0;
+	//[_unit, _killer] spawn ATR_FNC_Unconscious;
 
-
-// not dead? From this point only unconsciousness is possible
-private _set_unconscious = false;
-// if the unit is in a exploding vehicle...
-if (!(isNull objectParent _unit)) then {
-	if (damage (vehicle _unit) >= 1) then {
-		[{_this call AIS_System_fnc_checkUnload}, {
-			[[_this select 0, _this select 1, 0], {_this call AIS_System_fnc_moveCargoRemote}] remoteExec ["call"]
-		}, [_unit, vehicle _unit]] call AIS_Core_fnc_waitUntilAndExecute;
-		_set_unconscious = true;
-	};
-};
-if ((_damage > 0.9) && {_hitSelection in ["", "head", "body"]}) then {
-	_set_unconscious = true;
-};
-// more attention to closer explosives
-if ((_damage > 1.5) && {_hitSelection in ["pelvis", "head", "body"]} && {_damageType in ["grenade", "baaam"]}) then {
-	_set_unconscious = true;
-};
-if (_set_unconscious && {!(_unit getVariable ["ais_unconscious", false])}) then {
-	[{[(_this select 0)] call AIS_System_fnc_setUnconscious}, [_unit]] call AIS_Core_fnc_onNextFrame;
+    [{[(_this select 0)] call AIS_System_fnc_setUnconscious}, [_unit]] call AIS_Core_fnc_onNextFrame;
 	// need this delay to prevent new damage for some seconds after the unit go unconscious. after the delay it is possible to kill the unit when they get to much new damage.
 	_unit setVariable ["ais_protector_delay", (diag_tickTime + 6)];
+//	diag_log text "PLAYER SHOULD BE DEAD NOW";
 };
 
-_damage = _damage min 0.89;
-//diag_log format ["Selection: %1 --- Damage1: %2 --- Damage2: %3 --- partIndex: %4 --- Projectile: %5 ----> %6", _hitSelection, _damage, (_hitPart select 2), _hitPartIndex, _projectile, diag_frameno];
 
-_unit setHitIndex [_hitPart select 1, _damage];
+diag_log format[ "pHealth: %1 selection: %2 oldTotal: %3 newTotal: %4 incomingDmg: %6 appliedDmg: %6", _playerHealth, _hitSelection, _oldDamage, _damage, _incomingDamage, _newDamage];
+diag_log format[ "Damage reduction applied to %1", _unit ];
 _damage

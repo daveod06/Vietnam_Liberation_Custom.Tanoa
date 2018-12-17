@@ -20,21 +20,18 @@ if (!isDedicated && !hasInterface && isMultiplayer) then {
 	[] spawn compileFinal preprocessFileLineNumbers "scripts\server\offloading\hc_manager.sqf";
 };
 
-//if (!isDedicated && hasInterface) then {
-//	waitUntil {alive player};
-//	if (debug_source != name player) then {debug_source = name player};
-//	[] call compileFinal preprocessFileLineNumbers "scripts\client\init_client.sqf";
-//} else {
-//	setViewDistance 1600;
-//};
-
-// Custom Stuff
-setTerrainGrid (Param_Grass*3.125);
-setViewDistance (Param_ViewDistance);
-setObjectViewDistance [Param_ObjectViewDistance,Param_ObjectViewDistance*0.05];
-setDetailMapBlendPars [Param_DetailBlend,Param_DetailBlend*1.5];
-
-
+if (!isDedicated && hasInterface) then {
+	waitUntil {alive player};
+	if (debug_source != name player) then {debug_source = name player};
+	// Custom Stuff
+	setTerrainGrid (Param_Grass*3.125);
+	setViewDistance (Param_ViewDistance);
+	setObjectViewDistance [Param_ObjectViewDistance,Param_ObjectViewDistance*0.05];
+	setDetailMapBlendPars [Param_DetailBlend,Param_DetailBlend*2.5];
+	[] call compileFinal preprocessFileLineNumbers "scripts\client\init_client.sqf";
+} else {
+	setViewDistance 1600;
+};
 //_____________________________ Killfeed + Headshot _____________________________
 [] execVM  "Killfeed_GF\Killfeed_GF.sqf";
 //Credits

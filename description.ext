@@ -1,3 +1,5 @@
+#include "Scripts\outlw_magRepack\MagRepack_config.hpp"
+
 respawn = 3;
 respawndelay = 5;
 respawnButton = 1;

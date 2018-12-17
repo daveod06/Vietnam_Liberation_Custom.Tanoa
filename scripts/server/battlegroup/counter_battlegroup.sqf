@@ -39,7 +39,7 @@ while { GRLIB_csat_aggressivity >= 0.9 && GRLIB_endgame == 0 } do {
 
 	 if (!(isNull _target_player)) then {
 	 	_target_pos = [99999, getpos _target_player ] call F_getNearestSector;
-	 	if ( (_target_pos != "") && (Param_OpforAircraft == 1) ) then {
+	 	if ( (_target_pos != "") && (TOOTH_Param_OpforAircraft == 1) ) then {
 	 		[ _target_pos ] spawn spawn_air;
 	 	};
 	 };

@@ -42,6 +42,15 @@ if ( isMultiplayer ) then {
 	KP_liberation_production_debug = ["DebugProduction",0] call bis_fnc_getParamValue;
 	KP_liberation_respawn_cooldown = ["RespawnCooldown",900] call bis_fnc_getParamValue;
 	KP_liberation_clear_cargo = ["ClearCargo",1] call bis_fnc_getParamValue;
+    // Custom shit
+    TOOTH_Param_UseCustomDate = ["Param_UseCustomDate", 0] call bis_fnc_getParamValue;
+    TOOTH_Param_Grass = ["Param_Grass", 2] call bis_fnc_getParamValue;
+    TOOTH_Param_ViewDistance = ["Param_ViewDistance", 2000] call bis_fnc_getParamValue;
+    TOOTH_Param_ObjectViewDistance = ["Param_ObjectViewDistance", 1750] call bis_fnc_getParamValue;
+    TOOTH_Param_DetailBlend = ["Param_DetailBlend", 12] call bis_fnc_getParamValue;
+    TOOTH_Param_Magrepack = ["Param_Magrepack", 1] call bis_fnc_getParamValue;
+    TOOTH_Param_OpforChoppers = ["Param_OpforChoppers", 0] call bis_fnc_getParamValue;
+    TOOTH_Param_OpforAircraft = ["Param_OpforAircraft", 1] call bis_fnc_getParamValue;
 } else {
 	GRLIB_difficulty_modifier = 2;
 	GRLIB_time_factor = 12;
@@ -86,6 +95,15 @@ if ( isMultiplayer ) then {
 	KP_liberation_production_debug = 0;
 	KP_liberation_respawn_cooldown = 900;
 	KP_liberation_clear_cargo = 1;
+    // Custom shit
+    TOOTH_Param_UseCustomDate = 0;
+    TOOTH_Param_Grass = [2;
+    TOOTH_Param_ViewDistance = 4000;
+    TOOTH_Param_ObjectViewDistance = 1750;
+    TOOTH_Param_DetailBlend = 12;
+    TOOTH_Param_Magrepack = 1;
+    TOOTH_Param_OpforChoppers = 0;
+    TOOTH_Param_OpforAircraft = 0;
 };
 
 if (GRLIB_fatigue < 0.1) then {GRLIB_fatigue = false} else {GRLIB_fatigue = true};

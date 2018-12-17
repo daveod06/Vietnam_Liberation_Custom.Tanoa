@@ -50,7 +50,6 @@ GRLIB_arsenal_items = [
 	"ItemWatch",
 	"Medikit",
 	"ToolKit",
-    "FirstAidKit",
     "rhsusf_acc_eotech_xps3",
     "hlc_optic_LRT_m14",
     "hlc_optic_LeupoldM3A",
@@ -72,7 +71,10 @@ GRLIB_arsenal_items = [
     "UNS_Headband_OD",
     "rhsgref_helmet_M1_painted_alt01",
     "rhsgref_helmet_M1_bare_alt01",
-    "G_Aviator"
+    "G_Aviator",
+    "Chemlight_yellow",
+    "FirstAidKit",
+    "ItemRadio"
 ];
 
 GRLIB_arsenal_backpacks = [
