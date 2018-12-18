@@ -89,8 +89,8 @@ heavy_vehicles = [
 	["uns_M113_M2",200,60,100],							                //M113 (M2)
 	["uns_M577_amb",200,0,100],							                //M113 (Medical)
 	["uns_m551",300,200,150],										    //M551 Sheridan
-	["uns_m48a3",300,250,175]									        //M48 Patton
-	["uns_m110sp",300,250,175]									        //M110 SP Gun
+	["uns_m48a3",300,250,175],									        //M48 Patton
+	["uns_m110sp",300,250,175],									        //M110 SP Gun
 	["uns_m107sp",300,250,175]									        //M107 SP Gun
 ];
 
@@ -216,6 +216,10 @@ support_vehicles = [
 	["B_Slingload_01_Repair_F",275,0,0],								//Huron Repair
 	["B_Slingload_01_Fuel_F",75,0,200],									//Huron Fuel
 	["B_Slingload_01_Ammo_F",75,200,0]									//Huron Ammo
+];
+
+// All the UAVs must be declared here, otherwise there shall be UAV controlling issues. Namely: you won't be able to control them.
+uavs = [
 ];
 
 // Pre-made squads for the commander build menu. These shouldn't exceed 10 members.

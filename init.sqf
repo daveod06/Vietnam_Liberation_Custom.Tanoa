@@ -24,10 +24,10 @@ if (!isDedicated && hasInterface) then {
 	waitUntil {alive player};
 	if (debug_source != name player) then {debug_source = name player};
 	// Custom Stuff
-	setTerrainGrid (Param_Grass*3.125);
-	setViewDistance (Param_ViewDistance);
-	setObjectViewDistance [Param_ObjectViewDistance,Param_ObjectViewDistance*0.05];
-	setDetailMapBlendPars [Param_DetailBlend,Param_DetailBlend*2.5];
+	setTerrainGrid (TOOTH_Param_Grass*3.125);
+	setViewDistance (TOOTH_Param_ViewDistance);
+	setObjectViewDistance [TOOTH_Param_ObjectViewDistance,TOOTH_Param_ObjectViewDistance*0.05];
+	setDetailMapBlendPars [TOOTH_Param_DetailBlend,TOOTH_Param_DetailBlend*2.5];
 	[] call compileFinal preprocessFileLineNumbers "scripts\client\init_client.sqf";
 } else {
 	setViewDistance 1600;

@@ -179,7 +179,7 @@ class Params
 		isGlobal = 1;
 		values[] = {-100,0,1};
 		texts[] = {$STR_A3_MissionDefault, $STR_A3_Disabled, $STR_A3_EnabledForAllPlayers};
-		default = 0;
+		default = 1;
 		function = "bis_fnc_paramReviveMode";
 	};
 	class ReviveDuration {
@@ -203,7 +203,7 @@ class Params
 		isGlobal = 1;
 		values[] = {-100,1,1.5,2,2.5,3};
 		texts[] = {$STR_A3_MissionDefault,"1x","1.5x","2x","2.5x","3x"};
-		default = 1;
+		default = 2;
 		function = "bis_fnc_paramReviveMedicSpeedMultiplier";
 	};
 	class ReviveRequiredItems {
@@ -211,7 +211,7 @@ class Params
 		isGlobal = 1;
 		values[] = {-100,0,1,2};
 		texts[] = {$STR_A3_MissionDefault,$STR_A3_None,$STR_A3_Medikit,$STR_A3_FirstAidKitOrMedikit};
-		default = 0;
+		default = 2;
 		function = "bis_fnc_paramReviveRequiredItems";
 	};
 	class UnconsciousStateMode {
@@ -235,7 +235,7 @@ class Params
 		isGlobal = 1;
 		values[] = {-100,3,4,5,6,7,8,9,10};
 		texts[] = {$STR_A3_MissionDefault,3,4,5,6,7,8,9,10};
-		default = 10;
+		default = 8;
 		function = "bis_fnc_paramReviveForceRespawnDuration";
 	};
 	class Spacer2 {
@@ -339,7 +339,7 @@ class Params
 		title = $STR_PERMISSIONS_PARAM;
 		values[] = {1,0};
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
-		default = 1;
+		default = 0;
 	};
 	class CleanupVehicles {
 		title = $STR_CLEANUP_PARAM;

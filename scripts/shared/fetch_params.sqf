@@ -97,7 +97,7 @@ if ( isMultiplayer ) then {
 	KP_liberation_clear_cargo = 1;
     // Custom shit
     TOOTH_Param_UseCustomDate = 0;
-    TOOTH_Param_Grass = [2;
+    TOOTH_Param_Grass = 2;
     TOOTH_Param_ViewDistance = 4000;
     TOOTH_Param_ObjectViewDistance = 1750;
     TOOTH_Param_DetailBlend = 12;
