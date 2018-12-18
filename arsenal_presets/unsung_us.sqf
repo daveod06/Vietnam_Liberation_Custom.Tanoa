@@ -16,7 +16,8 @@ GRLIB_arsenal_weapons = [
     "rhs_weap_rsp30_white",
     "uns_MX991_m1911_base",
     "uns_m1911", // FIXME?
-    "uns_mkvFlarePistol"
+    "uns_mkvFlarePistol",
+    "hlc_rifle_Colt727_GL"
 ];
 
 GRLIB_arsenal_magazines = [
@@ -40,7 +41,8 @@ GRLIB_arsenal_magazines = [
     "rhs_mag_m576",
     "rhs_mag_30Rnd_556x45_M855A1_Stanag",
     "uns_m1911mag",
-    "uns_40mm_mkv_White"
+    "uns_40mm_mkv_White",
+    "rhs_mag_M441_HE"
 ];
 
 GRLIB_arsenal_items = [
@@ -74,7 +76,13 @@ GRLIB_arsenal_items = [
     "G_Aviator",
     "Chemlight_yellow",
     "FirstAidKit",
-    "ItemRadio"
+    "ItemRadio",
+    "UNS_PBR_Flak_S",
+    "UNS_JPilot_BDU",
+    "UNS_Pilot_BDU",
+    "murshun_cigs_cig0",
+    "UNS_HP_Helmet_OG",
+    "UNS_JP_Helmet_366TFW"
 ];
 
 GRLIB_arsenal_backpacks = [
