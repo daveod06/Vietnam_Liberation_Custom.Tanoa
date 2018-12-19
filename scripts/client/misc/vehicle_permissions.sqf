@@ -18,29 +18,28 @@ while { true } do {
 		if ( ! (  [ player, 1 ] call F_fetchPermission ) ) then {
 			_doeject = true;
 			hint localize "STR_PERMISSION_NO_ARMOR";
+			diag_log ["ERROR: %1",(localize "STR_PERMISSION_NO_ARMOR")];
 		};
 	} else {
 		if ( (vehicle player ) isKindOf "Air" ) then {
 			if ( ! (  [ player, 2 ] call F_fetchPermission ) ) then {
 				_doeject = true;
 				hint localize "STR_PERMISSION_NO_AIR";
+				diag_log ["ERROR: %1",(localize "STR_PERMISSION_NO_AIR")];
 			};
 		} else {
 			if ( ! (  [ player, 0 ] call F_fetchPermission ) ) then {
 				_doeject = true;
 				hint localize "STR_PERMISSION_NO_LIGHT";
+				diag_log format ["ERROR: %1",(localize "STR_PERMISSION_NO_LIGHT")];
 			};
 
 		};
 	};
 
-    if (!GRLIB_permissions_param) then
-    {
-        _doeject = false;
-    };
-
 	if ( _doeject ) then {
-		moveOut player;
+		//moveOut player;
 		_doeject = false;
+		//diag_log format ["ERROR: Kicking you out of vehicle. _doeject: %1 vehicle: %2",_doeject,vehicle];
 	};
 };
