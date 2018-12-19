@@ -34,6 +34,11 @@ while { true } do {
 		};
 	};
 
+    if (!GRLIB_permissions_param) then
+    {
+        _doeject = false;
+    };
+
 	if ( _doeject ) then {
 		moveOut player;
 		_doeject = false;

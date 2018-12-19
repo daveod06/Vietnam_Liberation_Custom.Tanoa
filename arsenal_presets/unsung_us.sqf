@@ -15,9 +15,13 @@ GRLIB_arsenal_weapons = [
     "hlc_rifle_Colt727",
     "rhs_weap_rsp30_white",
     "uns_MX991_m1911_base",
-    "uns_m1911", // FIXME?
+    "uns_m1911",
     "uns_mkvFlarePistol",
-    "hlc_rifle_Colt727_GL"
+    "hlc_rifle_Colt727_GL",
+    "uns_XM177E1",
+    "uns_XM177E2",
+    "uns_M16_M203",
+    "rhs_weap_m3a1"
 ];
 
 GRLIB_arsenal_magazines = [
@@ -42,7 +46,9 @@ GRLIB_arsenal_magazines = [
     "rhs_mag_30Rnd_556x45_M855A1_Stanag",
     "uns_m1911mag",
     "uns_40mm_mkv_White",
-    "rhs_mag_M441_HE"
+    "rhs_mag_M441_HE",
+    "Uns_1Rnd_HE_M381",
+    "rhsgref_30rnd_1143x23_M1911B_SMG"
 ];
 
 GRLIB_arsenal_items = [

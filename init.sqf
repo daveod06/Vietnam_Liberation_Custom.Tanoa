@@ -20,6 +20,10 @@ if (!isDedicated && !hasInterface && isMultiplayer) then {
 	[] spawn compileFinal preprocessFileLineNumbers "scripts\server\offloading\hc_manager.sqf";
 };
 
+// Custom shit
+[] call compileFinal preprocessFileLineNumbers "scripts\Tooth\init_tooth.sqf";
+
+
 if (!isDedicated && hasInterface) then {
 	waitUntil {alive player};
 	if (debug_source != name player) then {debug_source = name player};

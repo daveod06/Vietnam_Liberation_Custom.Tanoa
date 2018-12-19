@@ -43,6 +43,17 @@ if (_injured getVariable ["ais_unconscious", false]) then {
 		};
 	};
 
+    // Custom shit
+    _damage = damage _injured;
+	if (_injured == _healer) then 
+    {
+		waitUntil {damage _injured != _damage};
+		if (damage _injured < _damage) then 
+        {
+			_injured setDamage 0;
+		};
+	};
+
 	// give Faks back after healing process
 	private _startTime = diag_tickTime + 8;
 	if (local _healer) then {
