@@ -138,8 +138,8 @@ if(alive (driver _boat1)) then
 
 
 // have cargo squad join player's squad
-
-_assaultGrpArr join (group _caller);
+diag_log format ["REINFORCMENT _assaultGrpArr: %1 (units _assaultGrp): %1",_assaultGrpArr,(units _assaultGrp)];
+(units _assaultGrp) join (group _caller);
 
 uiSleep TOOTH_Reinforcment_Cooldown;
 

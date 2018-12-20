@@ -83,45 +83,7 @@ player addItem "ItemMap";
 player assignItem "ItemMap";
 player addItem "ItemCompass";
 player assignItem "ItemCompass";
-player addItem "Binocular";
-player assignItem "Binocular";
+player addWeapon "Binocular";
+//player assignItem "Binocular";
 
 
-//if (TOOTH_Param_Magrepack == 1) then {
-//	[] execVM "Scripts\outlw_magRepack\MagRepack_init_sv.sqf";
-//};
-
-
-[] call compileFinal preprocessFileLineNumbers "scripts\Tooth\init_tooth.sqf";
-TOOTH_LZ_Smoke = [];
-TOOTH_LZ_Smoke pushback "SmokeShellBlue";
-TOOTH_LZ_Smoke pushback "SmokeShellGreen";
-TOOTH_LZ_Smoke pushback "SmokeShellOrange";
-TOOTH_LZ_Smoke pushback "SmokeShellPurple";
-TOOTH_LZ_Smoke pushback "SmokeShellRed";
-TOOTH_LZ_Smoke pushback "SmokeShellYellow";
-TOOTH_Reinforcment_Chopper_Side = WEST;
-TOOTH_Reinforcment_Chopper = [];
-TOOTH_Reinforcment_Chopper pushback "uns_UH1D_m60";
-TOOTH_Reinforcment_Group = ["uns_US_25ID_SL","uns_US_25ID_RF1","uns_US_25ID_HMG","uns_US_25ID_AHMG","uns_US_25ID_RF2"];
-TOOTH_Reinforcment_Spawn_Marker = ""; // "startbase_marker";
-TOOTH_Reinforcment_Cooldown = 10.0;
-
-
-/*
-_null0 = [player] spawn
-{
-    _player = _this select 0;
-    uiSleep 30.0; // FIXME
-
-    missionNamespace setVariable ["Tooth_reinforced", false]; 
-    Tooth_reinforced = false; 
-    publicVariable "Tooth_reinforced";
-
-    _title = "Call in Reinforcments";
-    _script = "scripts\Tooth\fn_callReinforcments.sqf";
-    _arguments = [Tooth_Reinforcment_Spawn_Marker];
-    _reinforcmentActionIDIndex = player addAction [_title, _script, _arguments];
-
-};
-*/

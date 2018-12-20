@@ -21,7 +21,8 @@ GRLIB_arsenal_weapons = [
     "uns_XM177E1",
     "uns_XM177E2",
     "uns_M16_M203",
-    "rhs_weap_m3a1"
+    "rhs_weap_m3a1",
+    "hlc_rifle_L1A1SLR"
 ];
 
 GRLIB_arsenal_magazines = [
@@ -48,7 +49,8 @@ GRLIB_arsenal_magazines = [
     "uns_40mm_mkv_White",
     "rhs_mag_M441_HE",
     "Uns_1Rnd_HE_M381",
-    "rhsgref_30rnd_1143x23_M1911B_SMG"
+    "rhsgref_30rnd_1143x23_M1911B_SMG",
+    "hlc_20Rnd_762x51_B_fal"
 ];
 
 GRLIB_arsenal_items = [
@@ -88,7 +90,9 @@ GRLIB_arsenal_items = [
     "UNS_Pilot_BDU",
     "murshun_cigs_cig0",
     "UNS_HP_Helmet_OG",
-    "UNS_JP_Helmet_366TFW"
+    "UNS_JP_Helmet_366TFW",
+    "hlc_muzzle_MAG58_Brake",
+    "hlc_optic_suit"
 ];
 
 GRLIB_arsenal_backpacks = [

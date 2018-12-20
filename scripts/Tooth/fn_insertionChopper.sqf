@@ -18,7 +18,9 @@ while {alive _heli && !_extract} do {
             _wp = _cargoGroup addWaypoint [_insertPos, 5.0];
             _wp setWaypointType "GETOUT";
             _waypoint synchronizeWaypoint [_wp];
-			_waypoint setWaypointStatements ["true", "(vehicle this) setvariable [""State"",""Land""];"]; // FIXME may be unecessary
+			//_waypoint setWaypointStatements ["true", "(vehicle this) setvariable [""State"",""Land""];"]; // FIXME may be unecessary
+			_waypoint setWaypointStatements ["true", "(vehicle this) setvariable [""State"",""Evac""];"];
+            _waypoint setWaypointTimeout [5, 5, 5];
 		};
 		case "Approach": { 
 			systemchat "Approaching";

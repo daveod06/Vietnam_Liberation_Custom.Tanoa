@@ -60,6 +60,20 @@ class Params
 		texts[]={"Disabled", "Enabled"};
 		default = 1;
 	};
+    class Param_Airdrop
+	{
+		title="Add supply drops for BLUFOR";
+		values[]={0,1};
+		texts[]={"Disabled", "Enabled"};
+		default = 1;
+	};
+    class Param_Reinforcments
+	{
+		title="Add heli-inserted reinforcments for BLUFOR";
+		values[]={0,1};
+		texts[]={"Disabled", "Enabled"};
+		default = 1;
+	};
 	class LoadSaveParams {
 		title = $STR_PARAMS_LOADSAVEPARAMS;
 		values[] = { 0, 1, 2 };

@@ -51,6 +51,8 @@ if ( isMultiplayer ) then {
     TOOTH_Param_Magrepack = ["Param_Magrepack", 1] call bis_fnc_getParamValue;
     TOOTH_Param_OpforChoppers = ["Param_OpforChoppers", 0] call bis_fnc_getParamValue;
     TOOTH_Param_OpforAircraft = ["Param_OpforAircraft", 1] call bis_fnc_getParamValue;
+    TOOTH_Param_Airdrop = ["Param_Airdrop", 1] call bis_fnc_getParamValue;
+    TOOTH_Param_Reinforcments = ["Param_Reinforcments", 1] call bis_fnc_getParamValue;
 } else {
 	GRLIB_difficulty_modifier = 2;
 	GRLIB_time_factor = 12;
@@ -104,6 +106,8 @@ if ( isMultiplayer ) then {
     TOOTH_Param_Magrepack = 1;
     TOOTH_Param_OpforChoppers = 0;
     TOOTH_Param_OpforAircraft = 0;
+    TOOTH_Param_Airdrop = 1;
+    TOOTH_Param_Reinforcments = 1;
 };
 
 if (GRLIB_fatigue < 0.1) then {GRLIB_fatigue = false} else {GRLIB_fatigue = true};
