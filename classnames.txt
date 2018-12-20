@@ -1,0 +1,505 @@
+
+"CUP_C_Datsun",
+"CUP_C_Lada_GreenTK_CIV",
+"CUP_C_S1203_Ambulance_CIV",
+"CUP_C_S1203_CIV",
+"CUP_C_TK_Man_01",
+"CUP_C_TK_Man_06_Waist",
+"CUP_C_UAZ_Open_TK_CIV",
+"CUP_C_V3S_Open_TKC",
+"CUP_C_Volha_Blue_TKCIV",
+"CUP_C_Volha_Gray_TKCIV",
+"CUP_C_Volha_Limo_TKCIV",
+"C_man_1",
+
+
+
+"LOP_TAK_Civ_Landrover"
+,"LOP_TAK_Civ_Offroad"
+,"LOP_TAK_Civ_UAZ"
+,"LOP_TAK_Civ_UAZ_Open"
+,"LOP_TAK_Civ_Ural"
+,"LOP_TAK_Civ_Ural_open"
+,"C_Truck_02_fuel_F"
+,"C_Truck_02_transport_F"
+
+"LOP_CHR_Civ_Landrover"
+,"LOP_CHR_Civ_Offroad"
+,"LOP_CHR_Civ_UAZ"
+,"LOP_CHR_Civ_UAZ_Open"
+,"LOP_CHR_Civ_Ural"
+,"LOP_CHR_Civ_Ural_open"
+,"C_Truck_02_fuel_F"
+,"C_Truck_02_transport_F"
+
+
+
+"LOP_CHR_Civ_Assistant",
+"LOP_CHR_Civ_Doctor_01",
+"LOP_CHR_Civ_Functionary_01",
+"LOP_CHR_Civ_Functionary_02",
+"LOP_CHR_Civ_Policeman_01",
+"LOP_CHR_Civ_Rocker_01",
+"LOP_CHR_Civ_Rocker_02",
+"LOP_CHR_Civ_Rocker_03",
+"LOP_CHR_Civ_Rocker_04",
+"LOP_CHR_Civ_Villager_01",
+"LOP_CHR_Civ_Villager_02",
+"LOP_CHR_Civ_Villager_03",
+"LOP_CHR_Civ_Villager_04",
+"LOP_CHR_Civ_Woodlander_01",
+"LOP_CHR_Civ_Woodlander_02",
+"LOP_CHR_Civ_Woodlander_03",
+"LOP_CHR_Civ_Woodlander_04",
+"LOP_CHR_Civ_Worker_01",
+"LOP_CHR_Civ_Worker_02",
+"LOP_CHR_Civ_Worker_03",
+"LOP_CHR_Civ_Worker_04"
+
+
+"LOP_Tak_Civ_Man_01",
+"LOP_Tak_Civ_Man_02",
+"LOP_Tak_Civ_Man_04",
+"LOP_Tak_Civ_Man_05",
+"LOP_Tak_Civ_Man_06",
+"LOP_Tak_Civ_Man_07",
+"LOP_Tak_Civ_Man_08",
+"LOP_Tak_Civ_Man_09",
+"LOP_Tak_Civ_Man_10",
+"LOP_Tak_Civ_Man_11",
+"LOP_Tak_Civ_Man_12",
+"LOP_Tak_Civ_Man_13",
+"LOP_Tak_Civ_Man_14",
+"LOP_Tak_Civ_Man_15",
+"LOP_Tak_Civ_Man_16",
+"LOP_Tak_Civ_Random"
+
+"uns_H13_transport_USMC",
+"uns_HiddenAmmoBox",
+"uns_HiddenAmmoBox_small1",
+"uns_HiddenAmmoBox_small2",
+"uns_HiddenAmmoBox_small3",
+
+
+
+
+"uns_UH1D_m60",
+"uns_ach47_m134",
+"uns_ch47_m60_army",
+"uns_uh1c_m6_m158"
+
+"uh1_wreck",
+"uns_uh1_wreck",
+"uns_uh1c_wreck"
+
+"uns_civilian1",
+"uns_civilian1_b3",
+"uns_civilian2",
+"uns_civilian2_b1",
+"uns_civilian2_b3",
+"uns_civilian3",
+"uns_civilian3_b1",
+"uns_civilian4",
+"uns_civilian4_b1",
+"uns_civilian4_b2",
+
+
+"uns_men_USMC_68_AT",
+"uns_men_USMC_68_DEM",
+"uns_men_USMC_68_ENG",
+"uns_men_USMC_68_GL",
+"uns_men_USMC_68_HMG",
+"uns_men_USMC_68_MED",
+"uns_men_USMC_68_MRK",
+"uns_men_USMC_68_PL",
+"uns_men_USMC_68_RF4",
+"uns_men_USMC_68_RTO",
+"uns_men_USMC_68_SCT",
+"uns_men_USMC_68_SL",
+
+
+
+
+
+"uns_an2",
+"uns_Mi8MB_VPAF_medevac",
+"uns_Mi8TV_VPAF_MG",
+"uns_Mi8T_VPAF",
+"uns_Mig21_AGM",
+"uns_mig21_MR",
+
+
+
+
+
+
+
+
+"uns_Type55",
+"uns_Type55_LMG",
+"uns_Type55_MG",
+"uns_Type63_amb",
+
+"uns_Type74_NVA",
+"uns_BTR152_DSHK",
+"uns_zil157",
+"uns_zil157_repair",
+"uns_Zil157_refuel",
+"uns_nvatruck",
+"uns_nvatruck_mg",
+"uns_nvatruck_open",
+"uns_nvatruck_reammo",
+"uns_nvatruck_refuel",
+"uns_nvatruck_repair",
+"rhsgref_ins_uaz",
+"rhsgref_ins_uaz_open",
+"rhsgref_ins_uaz_dshkm",
+"rhsgref_ins_uaz_spg9"
+
+"uns_pk_high_NVA",
+"uns_M40_106mm_NVA",
+"uns_SPG9_73mm_NVA",
+"uns_dshk_high_NVA",
+"uns_m1941_82mm_mortarNVA",
+"uns_m1941_82mm_mortarNVA_arty",
+"uns_ZPU4_NVA",
+
+
+
+
+"uns_nvaf_pilot1",
+"uns_nvaf_pilot2",
+"uns_pilot1",
+"uns_pilot5",
+
+
+"uns_t34_85_nva",
+"uns_t54_nva",
+"uns_t55_nva",
+"uns_ot34_85_nva",
+"uns_Type63_mg",
+"pook_zsu57_nva"
+
+"uns_men_NVA_65_AA",
+"uns_men_NVA_65_AS3",
+"uns_men_NVA_65_AS4",
+"uns_men_NVA_65_AS6",
+"uns_men_NVA_65_AS7",
+"uns_men_NVA_65_AT",
+"uns_men_NVA_65_AT2",
+"uns_men_NVA_65_COM",
+"uns_men_NVA_65_HMG",
+"uns_men_NVA_65_LMG",
+"uns_men_NVA_65_MED",
+"uns_men_NVA_65_MRK",
+"uns_men_NVA_65_RF1",
+"uns_men_NVA_65_RF3",
+"uns_men_NVA_65_RTO",
+"uns_men_NVA_65_SAP",
+"uns_men_NVA_65_nco",
+"uns_men_NVA_65_off",
+
+"uns_men_NVA_68_AA",
+"uns_men_NVA_68_AS2",
+"uns_men_NVA_68_AS3",
+"uns_men_NVA_68_AS4",
+"uns_men_NVA_68_AS5",
+"uns_men_NVA_68_AS6",
+"uns_men_NVA_68_AS7",
+"uns_men_NVA_68_AS8",
+"uns_men_NVA_68_AT",
+"uns_men_NVA_68_AT2",
+"uns_men_NVA_68_COM",
+"uns_men_NVA_68_HMG",
+"uns_men_NVA_68_LMG",
+"uns_men_NVA_68_MED",
+"uns_men_NVA_68_MGAAS",
+"uns_men_NVA_68_MGS",
+"uns_men_NVA_68_MRK",
+"uns_men_NVA_68_MTS",
+"uns_men_NVA_68_RF1",
+"uns_men_NVA_68_RF2",
+"uns_men_NVA_68_RF3",
+"uns_men_NVA_68_RF4",
+"uns_men_NVA_68_RTO",
+"uns_men_NVA_68_SAP",
+"uns_men_NVA_68_TRI",
+"uns_men_NVA_68_nco",
+"uns_men_NVA_68_off",
+
+"uns_men_NVA_crew_Tdriver",
+"uns_men_NVA_crew_driver",
+"uns_men_NVA_crew_gunner",
+
+"uns_men_VC_local_AS4",
+"uns_men_VC_local_AS5",
+"uns_men_VC_local_LMG",
+"uns_men_VC_local_MED",
+"uns_men_VC_local_MRK",
+"uns_men_VC_local_RF7",
+"uns_men_VC_local_SAP",
+"uns_men_VC_local_off",
+"uns_men_VC_mainforce_68_AS2",
+"uns_men_VC_mainforce_68_AS5",
+"uns_men_VC_mainforce_68_AT",
+"uns_men_VC_mainforce_68_AT2",
+"uns_men_VC_mainforce_68_COM",
+"uns_men_VC_mainforce_68_HMG",
+"uns_men_VC_mainforce_68_LMG",
+"uns_men_VC_mainforce_68_MED",
+"uns_men_VC_mainforce_68_MRK",
+"uns_men_VC_mainforce_68_RF1",
+"uns_men_VC_mainforce_68_RF2",
+"uns_men_VC_mainforce_68_RF3",
+"uns_men_VC_mainforce_68_RF4",
+"uns_men_VC_mainforce_68_RTO",
+"uns_men_VC_mainforce_68_SAP",
+"uns_men_VC_mainforce_68_nco",
+"uns_men_VC_mainforce_68_off",
+"uns_men_VC_recon_MGS",
+
+
+
+
+// USMC gear
+this forceAddUniform "UNS_ARMY_BDU_USMC67Dirtyipatch";
+this addItemToUniform "uns_kabar";
+this addVest "UNS_M1956_M1"; // big web gear
+this addVest "UNS_FLAK"; // flak jacket
+this addHeadgear "UNS_USMC_Cover";
+this addHeadgear "UNS_M1_7_baby";
+this addHeadgear "UNS_M1_4";
+this addBackpack "rhssaf_alice_smb";
+
+
+
+// garand
+this addItemToUniform "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle";
+this addWeapon "rhs_weap_m1garand_sa43";
+
+// M79
+this addItemToUniform "rhs_mag_m576";
+this addItemToUniform "rhs_mag_m713_Red";
+this addItemToUniform "rhs_mag_M441_HE";
+this addWeapon "rhs_weap_m79";
+
+// M1 carbine
+this addItemToUniform "uns_m2carbinemag_T";
+this addWeapon "uns_m1carbine";
+
+// M16A1
+this addItemToUniform "uns_20Rnd_556x45_Stanag";
+this addItemToUniform "uns_20Rnd_556x45_Stanag_T";
+this addWeapon "uns_m16_bc";
+
+this addItemToUniform "uns_30Rnd_556x45_Stanag";
+this addWeapon "uns_M16A1";
+this addPrimaryWeaponItem "uns_b_m7";
+
+
+// M1903
+this addItemToUniform "uns_springfieldmag_T";
+this addWeapon "uns_m1903";
+this addPrimaryWeaponItem "uns_o_Unertl8x";
+
+// Remington M40
+this addItemToUniform "uns_m40mag_T";
+this addWeapon "uns_M40_base";
+this addPrimaryWeaponItem "uns_o_ANPVS2";
+this addPrimaryWeaponItem "uns_o_RedfieldART";
+
+// M14
+this addItemToUniform "hlc_20Rnd_762x51_B_M14";
+this addItemToUniform "hlc_20Rnd_762x51_T_M14";
+this addWeapon "hlc_rifle_M14";
+this addPrimaryWeaponItem "hlc_optic_LRT_m14";
+
+// M60
+this addItemToVest "hlc_100Rnd_762x51_M_M60E4";
+this addWeapon "hlc_lmg_m60";
+
+// Grenades
+this addItemToVest "rhs_mag_m67";
+this addItemToVest "Chemlight_green";
+this addItemToVest "Chemlight_red";
+this addItemToVest "rhs_mag_an_m14_th3";
+this addItemToVest "SmokeShellBlue";
+this addItemToVest "SmokeShellGreen";
+this addItemToVest "SmokeShellOrange";
+this addItemToVest "SmokeShellPurple";
+this addItemToVest "SmokeShellRed";
+this addItemToVest "SmokeShell";
+this addItemToVest "SmokeShellYellow";
+
+// M72 LAW
+this addWeapon "rhs_weap_m72a7";
+
+// Sawed off M79
+this addItemToVest "uns_1Rnd_BS_M576";
+this addItemToVest "Uns_1Rnd_HE_M381";
+this addItemToVest "uns_1Rnd_AB_M397";
+this addWeapon "uns_m79p";
+
+// sawed off M2 carbine
+this addItemToUniform "uns_m2carbinemag_T";
+this addWeapon "uns_m2carbine_shorty_p";
+
+// .357 mag
+this addItemToUniform "uns_357mag";
+this addWeapon "uns_357m";
+
+
+
+
+
+
+
+
+
+// AKs
+this addItemToVest "uns_75Rnd_akdr";
+this addItemToVest "uns_ak47mag_T";
+this addWeapon "uns_akm_drum";
+this addWeapon "uns_ak47";
+this addWeapon "uns_akm";
+this addWeapon "uns_akms";
+this addWeapon "uns_aks47f";
+this addWeapon "uns_type56";
+
+// RPK
+this addItemToVest "uns_ak47mag_T";
+this addWeapon "uns_RPK_40";
+
+// RPD
+this addItemToVest "uns_rpdmag";
+this addWeapon "uns_rpd";
+
+// PKM
+this addItemToVest "uns_100Rnd_762x54_PK";
+this addWeapon "uns_PKsupport";
+
+// SVD
+this addItemToVest "uns_svdmag";
+this addWeapon "uns_svd_base";
+this addPrimaryWeaponItem "uns_o_PSO1";
+
+// SA 58
+this addItemToVest "uns_sa58mag";
+this addWeapon "uns_sa58p";
+
+
+
+// DP 28
+this addItemToVest "uns_47Rnd_DP28";
+this addWeapon "uns_DP28_base";
+
+// K50 smg
+this addItemToVest "uns_k50mag";
+this addItemToVest "uns_ppshmag";
+this addWeapon "uns_k50m";
+
+// PPS 63 smg
+this addItemToVest "uns_k50mag";
+this addWeapon "uns_PPS43";
+
+// BAR
+this addItemToVest "uns_barmag";
+this addWeapon "uns_bar";
+
+// M3 carbine night sniper
+this addItemToVest "uns_m1carbinemag";
+this addWeapon "uns_m3carbine";
+
+// mosin
+this addItemToVest "uns_mosinmag";
+this addWeapon "uns_mosin";
+this addPrimaryWeaponItem "uns_o_PU";
+
+
+
+
+
+
+
+// SKS
+this addItemToVest "uns_sksmag";
+this addWeapon "uns_sks";
+
+// SVT40
+this addWeapon "uns_svt";
+this addItemToVest "uns_svtmag";
+
+// B40 RPG
+this addItemToBackpack "uns_B40grenade";
+this addWeapon "uns_B40";
+
+// RPG-2
+this addItemToBackpack "uns_rpg2grenade";
+this addWeapon "uns_rpg2";
+
+// PM
+this addItemToVest "uns_makarovmag";
+this addWeapon "uns_makarov";
+
+// nagant m1895
+this addItemToVest "uns_nagant_m1895mag";
+this addWeapon "uns_nagant_m1895";
+
+// nades and bombs
+this addItemToVest "uns_molotov_mag";
+this addItemToVest "uns_rgd5gren";
+this addItemToVest "uns_rkg3gren";
+this addItemToVest "uns_mine_beer_mag";
+this addItemToBackpack "Mine";
+this addItemToBackpack "uns_mine_AV_mag";
+this addItemToBackpack "uns_mine_AP_mag";
+
+
+
+// colt m4
+this addItemToUniform "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+this addWeapon "hlc_rifle_Colt727";
+
+
+
+
+
+
+comment "Add containers";
+this forceAddUniform "UNS_PBR_Flak_S";
+this forceAddUniform "UNS_JPilot_BDU";
+this forceAddUniform "UNS_Pilot_BDU";
+
+
+this addVest "UNS_FLAK";
+
+
+this addBackpack "rhsusf_eject_Parachute_backpack";
+
+
+
+this addItemToVest "SmokeShellGreen";
+this addItemToVest "SmokeShellOrange";
+this addItemToVest "SmokeShellPurple";
+
+for "_i" from 1 to 22 do {this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_Stanag";};
+for "_i" from 1 to 9 do {this addItemToBackpack "rhs_mag_M441_HE";};
+
+
+
+this addHeadgear "UNS_JP_Helmet_366TFW";
+this addHeadgear "rhsgref_helmet_M1_bare_alt01";
+this addHeadgear "UNS_HP_Helmet_OG";
+
+
+
+for "_i" from 1 to 4 do {this addItemToUniform "uns_m1911mag";};
+this addItemToUniform "rhs_mag_m67";
+this addItemToUniform "SmokeShellBlue";
+this addGoggles "murshun_cigs_cig0";
+this addWeapon "hlc_rifle_Colt727_GL";
+this addWeapon "uns_m1911";
+
+
+
+

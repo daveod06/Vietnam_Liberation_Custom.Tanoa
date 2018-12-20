@@ -21,8 +21,18 @@ if (!isDedicated && !hasInterface && isMultiplayer) then {
 };
 
 // Custom shit
-[] call compileFinal preprocessFileLineNumbers "scripts\Tooth\init_tooth.sqf";
-
+//[] call compileFinal preprocessFileLineNumbers "scripts\Tooth\init_tooth.sqf";
+//Tooth_LZ_Smoke = [];
+//Tooth_LZ_Smoke pushback "SmokeShellBlue";
+//Tooth_LZ_Smoke pushback "SmokeShellGreen";
+//Tooth_LZ_Smoke pushback "SmokeShellOrange";
+//Tooth_LZ_Smoke pushback "SmokeShellPurple";
+//Tooth_LZ_Smoke pushback "SmokeShellRed";
+//Tooth_LZ_Smoke pushback "SmokeShellYellow";
+//TOOTH_Reinforcment_Chopper_Side = WEST;
+//TOOTH_Reinforcment_Chopper = [];
+//TOOTH_Reinforcment_Chopper pushback "uns_UH1D_m60";
+//Tooth_Reinforcment_Group = ["uns_US_25ID_SL","uns_US_25ID_RF1","uns_US_25ID_HMG","uns_US_25ID_AHMG","uns_US_25ID_RF2"];
 
 if (!isDedicated && hasInterface) then {
 	waitUntil {alive player};

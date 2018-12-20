@@ -21,6 +21,9 @@ while {alive _heli && !_extract} do {
 		};
 		case "Approach": { 
 			systemchat "Approaching";
+            if(_heli distance _insertPos < 800) then {
+			    _smoke1 = (selectRandom Tooth_LZ_Smoke) createVehicle _insertPos;
+            };
 			if(_heli distance _insertPos < 300) then {
 				_heli setSpeedMode "NORMAL";
 				_heli flyinheight 30;
