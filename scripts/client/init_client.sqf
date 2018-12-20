@@ -75,3 +75,14 @@ player addEventHandler ["GetInMan", {[_this select 2] spawn kp_cr_checkVehicle;}
 [] execVM "onPlayerRespawn.sqf";
 
 [player] joinSilent (createGroup GRLIB_side_friendly);
+
+missionNamespace setVariable ["Tooth_reinforced", false]; 
+Tooth_reinforced = false; 
+publicVariable "Tooth_reinforced";
+
+_title = "Call in Reinforcments";
+_script = "scripts\Tooth\fn_callReinforcments.sqf";
+_arguments = [Tooth_Reinforcment_Spawn_Marker];
+_reinforcmentActionIDIndex = player addAction [_title, _script, _arguments];
+diag_log format["ADDED ACTION: %1",_reinforcmentActionIDIndex];
+hint format["ADDED ACTION: %1",_reinforcmentActionIDIndex];

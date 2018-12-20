@@ -1,6 +1,7 @@
-params["_heli","_insertPos","_evacVec","_cargoGroup"];
+params["_heli","_insertPos","_pos","_cargoGroup"];
 
 private _extract = false;
+private _smokeSpawned = false;
 
 while {alive _heli && !_extract} do {
 	private _state = _heli getvariable ["State","Unknown"];
@@ -16,13 +17,17 @@ while {alive _heli && !_extract} do {
 
             _wp = _cargoGroup addWaypoint [_insertPos, 5.0];
             _wp setWaypointType "GETOUT";
-            _waypoiny synchronizeWaypoint [_wp];
+            _waypoint synchronizeWaypoint [_wp];
 			_waypoint setWaypointStatements ["true", "(vehicle this) setvariable [""State"",""Land""];"]; // FIXME may be unecessary
 		};
 		case "Approach": { 
 			systemchat "Approaching";
             if(_heli distance _insertPos < 800) then {
-			    _smoke1 = (selectRandom Tooth_LZ_Smoke) createVehicle _insertPos;
+            	if (!_smokeSpawned) then
+            	{
+			    	_smoke1 = (selectRandom Tooth_LZ_Smoke) createVehicle _insertPos;
+			    	_smokeSpawned = true;
+			    };
             };
 			if(_heli distance _insertPos < 300) then {
 				_heli setSpeedMode "NORMAL";
@@ -54,7 +59,7 @@ while {alive _heli && !_extract} do {
             {
                 {
                     doGetOut _x;
-                    _x leaveVehicle _veh;
+                    _x leaveVehicle _heli;
                     _x enableAI "FSM";
                     unassignVehicle _x;
                 } forEach (units _cargoGroup);
@@ -65,11 +70,11 @@ while {alive _heli && !_extract} do {
 			sleep (random 4 + 1);
 			_heli land "NONE";
 			_heli setSpeedMode "FULL";
-			private _waypoint = (group _heli) addWaypoint [_extractPos vectorAdd _evacVec, 0];
+			private _waypoint = (group _heli) addWaypoint [_pos, 0];
 			_waypoint setWaypointSpeed "FULL";
 			_waypoint setWaypointBehaviour "CARELESS";
 			_waypoint setWaypointFormation "WEDGE";
-            private _despawnCommand = format ["{{deleteVehicle _x} forEach crew %1} forEach thisList; deleteVehicle %2;",_veh,_veh];
+            private _despawnCommand = format ["{{deleteVehicle _x} forEach crew %1} forEach thisList; deleteVehicle %2;",_heli,_heli];
 			_waypoint setWaypointStatements ["true", _despawnCommand];
 			_extract = true;
 		};

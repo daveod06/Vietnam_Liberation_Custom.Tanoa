@@ -87,9 +87,9 @@ player addItem "Binocular";
 player assignItem "Binocular";
 
 
-if (TOOTH_Param_Magrepack == 1) then {
-	[] execVM "Scripts\outlw_magRepack\MagRepack_init_sv.sqf";
-};
+//if (TOOTH_Param_Magrepack == 1) then {
+//	[] execVM "Scripts\outlw_magRepack\MagRepack_init_sv.sqf";
+//};
 
 
 [] call compileFinal preprocessFileLineNumbers "scripts\Tooth\init_tooth.sqf";
@@ -104,9 +104,11 @@ TOOTH_Reinforcment_Chopper_Side = WEST;
 TOOTH_Reinforcment_Chopper = [];
 TOOTH_Reinforcment_Chopper pushback "uns_UH1D_m60";
 TOOTH_Reinforcment_Group = ["uns_US_25ID_SL","uns_US_25ID_RF1","uns_US_25ID_HMG","uns_US_25ID_AHMG","uns_US_25ID_RF2"];
-TOOTH_Reinforcment_Spawn_Marker = "";
-TOOTH_Reinforcment_Cooldown = 600.0;
+TOOTH_Reinforcment_Spawn_Marker = ""; // "startbase_marker";
+TOOTH_Reinforcment_Cooldown = 10.0;
 
+
+/*
 _null0 = [player] spawn
 {
     _player = _this select 0;
@@ -122,3 +124,4 @@ _null0 = [player] spawn
     _reinforcmentActionIDIndex = player addAction [_title, _script, _arguments];
 
 };
+*/

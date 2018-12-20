@@ -1,14 +1,19 @@
 params ["_target", "_caller", "_actionId", "_arguments"];
 
+
+[_caller,"HQ can we get some reinforcments out here?!"] remoteExec ["sideChat",0,false];
+
+sleep 5.0;
+
 // Exit if cooldown still active
-if (missionNamespace getVariable ["Tooth_reinforced", false]) exitWith {[_caller,"Reinforcements not ready, but will be within 10 minutes."] remoteExec ["sideChat",0,false];};
+if (missionNamespace getVariable ["Tooth_reinforced", false]) exitWith {[_caller,"Reinforcements not ready, but will be within 10 minutes."] remoteExec ["sideChat",0,false]; diag_log "REINFORCMENT EXIT: cooldown";};
 
 // find if there's a safe landing position nearby
 private _callerPos = getPos _caller;
-private _safePos = [_callerPos, 0.0, 200.0, 30.0, 0, 0.1, 0, [], [[0,0,0], [0,0,0]]] call BIS_fnc_findSafePos;
+private _safePos = [_callerPos, 0.0, 300.0, 30.0, 0, 0.4, 0, [], [[0,0,0], [0,0,0]]] call BIS_fnc_findSafePos;
 
 // Exit if no sutable landing zone
-if (_safePos isEqualTo [0,0,0]) exitWith {[_caller,"Hold off on reinforcments for now. We need to find a clear LZ."] remoteExec ["sideChat",0,false];};
+if (_safePos isEqualTo [0,0,0]) exitWith {[_caller,"Hold off on reinforcments for now. We need to find a clear LZ."] remoteExec ["sideChat",0,false]; diag_log "REINFORCMENT EXIT: bad LZ";};
 
 // set variable for cooldown
 missionNamespace setVariable ["Tooth_reinforced", true]; 
@@ -88,18 +93,18 @@ _skillset = [
 } forEach (units _assaultGrp);
 
 
-[_boat1, _safePos,(_spawnVector vectorMultiply 5),_assaultGrp] spawn TOOTH_fnc_insertionChopper;
+[_boat1, _safePos,_pos,_assaultGrp] spawn TOOTH_fnc_insertionChopper;
 
 
 
-diag_log format["fn_RunExtraction: Extraction choppers spawned: %1, %2 and %3",_boat1,_boat2,_boat3];
+diag_log format["fn_RunExtraction: Extraction choppers spawned: %1",_boat1];
 
 _boat1 flyinheight 40;
 _group1 setGroupIdGlobal ["Angel One"];
 [_boat1] spawn {
 	params["_heli"];
 	sleep 5;
-	[driver _heli,"Reinforcments inbound. Hang tight."] remoteExec ["sideChat",0,false];
+	[driver _heli,"Roger that. Reinforcments inbound. Hang tight."] remoteExec ["sideChat",0,false];
 };
 _heloGuard = {
 	params["_heli"];
@@ -128,7 +133,7 @@ _boat1 setvariable ["State","Evac"];
 
 if(alive (driver _boat1)) then
 {
-    [driver _boat1,"Everybody off? Okay, let's get the fuck out of here!"] remoteExec ["sideChat",0,false];
+    [driver _boat1,"Everybody get off and let's get the fuck out of here!"] remoteExec ["sideChat",0,false];
 };
 
 
