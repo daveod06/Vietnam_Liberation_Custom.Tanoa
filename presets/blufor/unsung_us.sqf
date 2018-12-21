@@ -9,7 +9,7 @@ Optional Mods:
 
 /* - Support classnames.
 Each of these should be unique, the same classnames for different purposes may cause various unpredictable issues with player actions. Or not, just don't try!	*/
-FOB_typename = "Land_Cargo_HQ_V3_F";									// This is the main FOB HQ building. 																									Default is "Land_Cargo_HQ_V1_F".
+FOB_typename = "Land_BagBunker_Large_F";									// This is the main FOB HQ building. 																									Default is "Land_Cargo_HQ_V1_F".
 FOB_box_typename = "B_Slingload_01_Cargo_F";							// This is the FOB as a container. 																										Default is "B_Slingload_01_Cargo_F".
 FOB_truck_typename = "uns_M35A2";				                        // This is the FOB as a vehicle.																										Default is "B_Truck_01_box_F".
 Arsenal_typename = "B_supplyCrate_F";									// This is the virtual arsenal as portable supply crates.  																				Default is "B_supplyCrate_F".
