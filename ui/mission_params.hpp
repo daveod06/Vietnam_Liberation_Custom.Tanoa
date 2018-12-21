@@ -37,7 +37,7 @@ class Params
 		title="Detail Blend Distance (setDetailMapBlendPars)";
 		values[]={12,25,50,100,200};
 		texts[]={"Super Close (12)","Close (25)", "Normal (50)", "Far (100)", "Very Far (200)"};
-		default = 12;
+		default = 25;
 	};
     class Param_Magrepack
 	{
