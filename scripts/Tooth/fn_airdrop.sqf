@@ -9,14 +9,14 @@ if (missionNamespace getVariable ["Tooth_airdropActive", false]) exitWith {[_cal
 if (((_ammo) in Tooth_arr_airdropGrenades)) then
 {
     _grenadeObj = _projectile;
-    _doArsenalCrateDrop = [_grenadeObj] spawn
+    _doArsenalCrateDrop = [_grenadeObj,_unit] spawn
     {
         ///////////////////////////////////////////////////////////////////////////////////////
         private ["_grenadePos","_grenadeObj"];
-        params ["_grenadeObj"];
+        params ["_grenadeObj","_unit"];
         waitUntil {speed _grenadeObj <= .001}; // wait until smoke grenade has stopped moving
         sleep 2.0;
-        [_unit,"Ready for supply drop."] remoteExec ["sideChat",0,false];
+        [_unit,"Smoke out. Ready for supply drop."] remoteExec ["sideChat",0,false];
         _grenadePos = getPosATL _grenadeObj; // get position of smoke grenade
         // if night, spawn flare
         _sunriseSunsetTime = date call BIS_fnc_sunriseSunsetTime;

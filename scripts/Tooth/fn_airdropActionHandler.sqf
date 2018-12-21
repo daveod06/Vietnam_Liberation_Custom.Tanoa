@@ -2,6 +2,7 @@ params ["_target", "_caller", "_actionId", "_arguments"];
 
 // add handler for Airdrop supply drop crate
 _dropEventHandlerIndex = _caller addEventHandler ["Fired",Tooth_fnc_airdrop];
+[_caller,"Will throw smoke when ready for the drop."] remoteExec ["sideChat",0,false];
 
 //missionNamespace setVariable ["dropEventHandlerIndex", _dropEventHandlerIndex];
 //publicVariable "dropEventHandlerIndex";

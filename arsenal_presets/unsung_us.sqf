@@ -92,7 +92,9 @@ GRLIB_arsenal_items = [
     "UNS_HP_Helmet_OG",
     "UNS_JP_Helmet_366TFW",
     "hlc_muzzle_MAG58_Brake",
-    "hlc_optic_suit"
+    "hlc_optic_suit",
+    "murshun_cigs_cigpack",
+    "murshun_cigs_lighter"
 ];
 
 GRLIB_arsenal_backpacks = [
