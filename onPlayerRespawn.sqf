@@ -35,7 +35,7 @@ if (true) then // if (Param_Reinforcments == 1) then
     TOOTH_Reinforcment_Chopper pushback "uns_UH1D_m60";
     TOOTH_Reinforcment_Group = ["uns_US_25ID_SL","uns_US_25ID_RF1","uns_US_25ID_HMG","uns_US_25ID_AHMG","uns_US_25ID_RF2"];
     TOOTH_Reinforcment_Spawn_Marker = ""; // "startbase_marker";
-    TOOTH_Reinforcment_Cooldown = 60.0; // FIXME
+    TOOTH_Reinforcment_Cooldown = 30 * 60 ; // FIXME
 
     missionNamespace setVariable ["Tooth_reinforced", false]; 
     Tooth_reinforced = false; 
@@ -82,7 +82,7 @@ if (true) then // if (Param_Airdrop == 1) then
     
     Tooth_airdropAircraft = "rhs_c130j";
     Tooth_airdropAircraftSide = WEST;
-    Tooth_airdropCooldown = 60.0; // FIXME
+    Tooth_airdropCooldown = 20 * 60; // FIXME
     
     // Base stuff (RHS items)
     Tooth_arr_AirdropCrateWeapons = [];
