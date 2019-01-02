@@ -94,7 +94,9 @@ GRLIB_arsenal_items = [
     "hlc_muzzle_MAG58_Brake",
     "hlc_optic_suit",
     "murshun_cigs_cigpack",
-    "murshun_cigs_lighter"
+    "murshun_cigs_lighter",
+    "UNS_ItemRadio_PRC_25",
+    "uns_AC47_RC"
 ];
 
 GRLIB_arsenal_backpacks = [

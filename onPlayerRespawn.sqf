@@ -104,8 +104,11 @@ if (true) then // if (Param_Airdrop == 1) then
     Tooth_arr_AirdropCrateItems pushback ["Chemlight_yellow",50];
     Tooth_arr_AirdropCrateItems pushback ["murshun_cigs_cigpack",5];
     Tooth_arr_AirdropCrateItems pushback ["murshun_cigs_lighter",5];
+    Tooth_arr_AirdropCrateItems pushback ["UNS_ItemRadio_PRC_25",1];
+    Tooth_arr_AirdropCrateItems pushback ["uns_AC47_RC",1];
     Tooth_arr_AirdropCrateBackpacks = [];
     
+
     // Unsung Stuff, always on
     // M16A1
     Tooth_arr_AirdropCrateMags pushback ["uns_30Rnd_556x45_Stanag",60];
