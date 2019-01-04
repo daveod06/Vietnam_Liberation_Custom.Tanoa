@@ -96,7 +96,16 @@ GRLIB_arsenal_items = [
     "murshun_cigs_cigpack",
     "murshun_cigs_lighter",
     "UNS_ItemRadio_PRC_25",
-    "uns_AC47_RC"
+    "uns_AC47_RC",
+    "UNS_ARMY_BDU_65",
+    "UNS_DUCK_BDU",
+    "UNS_USMC_BDU_65",
+    "UNS_USMC_BDU_65_2",
+    "UNS_USMC_BDU",
+    "UNS_USMC_BDU_S",
+    "UNS_USMC_LERDL",
+    "UNS_JPilot_BDU",
+    "UNS_Pilot_BDU"
 ];
 
 GRLIB_arsenal_backpacks = [

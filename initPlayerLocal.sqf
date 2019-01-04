@@ -74,6 +74,8 @@ player forceAddUniform "UNS_ARMY_BDU";
 player addVest "UNS_FLAK";
 player addHeadgear "UNS_M1_4";
 player addGoggles "murshun_cigs_cig0";
+player addItem "murshun_cigs_lighter";
+player addItem "murshun_cigs_cigpack";
 //player addBackpack "rhssaf_alice_smb";
 player addItem "ItemRadio";
 player assignItem "ItemRadio";

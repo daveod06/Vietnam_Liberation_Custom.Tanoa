@@ -49,6 +49,7 @@ if (((_ammo) in Tooth_arr_airdropGrenades)) then
         _vehGroup setBehaviour 'CARELESS';
         _vehGroup setSpeedMode 'NORMAL';
         _vehGroup deleteGroupWhenEmpty true;
+        _vehGroup setGroupIdGlobal ["C-130 Crew"];
         _vehName allowDamage false;
         _vehName limitSpeed 230;
         _vehName flyInHeightASL [150, 150, 150];

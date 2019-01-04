@@ -6,22 +6,34 @@ if ( isNil "GRLIB_respawn_loadout" ) then {
 	removeBackpack player;
 	removeHeadgear player;
 	removeGoggles player;
-	player linkItem "ItemMap";
-	player linkItem "ItemCompass";
-	player linkItem "ItemWatch";
-	player linkItem "ItemRadio";
+    player forceAddUniform "UNS_ARMY_BDU";
+    player addVest "UNS_FLAK";
+    player addHeadgear "UNS_M1_4";
+    player addGoggles "murshun_cigs_cig0";
+    player addItem "murshun_cigs_lighter";
+    player addItem "murshun_cigs_cigpack";
+    player addItem "ItemRadio";
+    player assignItem "ItemRadio";
+    player addItem "ItemWatch";
+    player assignItem "ItemWatch";
+    player addItem "ItemMap";
+    player assignItem "ItemMap";
+    player addItem "ItemCompass";
+    player assignItem "ItemCompass";
+    player addWeapon "Binocular";
 } else {
 	sleep 4;
 	[ player, GRLIB_respawn_loadout ] call F_setLoadout;
 };
 
-if (true) then // (Param_Magrepack == 1) then
+_repack = missionNamespace getVariable ["TOOTH_Param_Magrepack",0];
+if (_repack == 1) then
 {
 	[] execVM "Scripts\outlw_magRepack\MagRepack_init_sv.sqf";
 };
 
-
-if (true) then // if (Param_Reinforcments == 1) then
+_reinforcments = missionNamespace getVariable ["TOOTH_Param_Reinforcments",0];
+if (_reinforcments == 1) then
 {
     TOOTH_LZ_Smoke = [];
     TOOTH_LZ_Smoke pushback "SmokeShellBlue";
@@ -35,7 +47,7 @@ if (true) then // if (Param_Reinforcments == 1) then
     TOOTH_Reinforcment_Chopper pushback "uns_UH1D_m60";
     TOOTH_Reinforcment_Group = ["uns_US_25ID_SL","uns_US_25ID_RF1","uns_US_25ID_HMG","uns_US_25ID_AHMG","uns_US_25ID_RF2"];
     TOOTH_Reinforcment_Spawn_Marker = ""; // "startbase_marker";
-    TOOTH_Reinforcment_Cooldown = 30 * 60 ; // FIXME
+    TOOTH_Reinforcment_Cooldown = TOOTH_Param_Reinforcments_Cooldown * 60 ; // FIXME
 
     missionNamespace setVariable ["Tooth_reinforced", false]; 
     Tooth_reinforced = false; 
@@ -52,8 +64,8 @@ if (true) then // if (Param_Reinforcments == 1) then
 
 
 
-
-if (true) then // if (Param_Airdrop == 1) then
+_airdrop = missionNamespace getVariable ["TOOTH_Param_Airdrop",0];
+if (_airdrop == 1) then
 {
     // Tooth custom classes
     Tooth_arr_airdropGrenades = [
@@ -82,7 +94,7 @@ if (true) then // if (Param_Airdrop == 1) then
     
     Tooth_airdropAircraft = "rhs_c130j";
     Tooth_airdropAircraftSide = WEST;
-    Tooth_airdropCooldown = 20 * 60; // FIXME
+    Tooth_airdropCooldown = TOOTH_Param_Airdrop_Cooldown * 60; // FIXME
     
     // Base stuff (RHS items)
     Tooth_arr_AirdropCrateWeapons = [];

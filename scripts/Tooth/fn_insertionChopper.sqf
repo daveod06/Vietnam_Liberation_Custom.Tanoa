@@ -20,7 +20,7 @@ while {alive _heli && !_extract} do {
             _waypoint synchronizeWaypoint [_wp];
 			//_waypoint setWaypointStatements ["true", "(vehicle this) setvariable [""State"",""Land""];"]; // FIXME may be unecessary
 			_waypoint setWaypointStatements ["true", "(vehicle this) setvariable [""State"",""Evac""];"];
-            _waypoint setWaypointTimeout [5, 5, 5];
+            _waypoint setWaypointTimeout [3, 3, 3];
 		};
 		case "Approach": { 
 			systemchat "Approaching";

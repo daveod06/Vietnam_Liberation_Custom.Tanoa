@@ -10,7 +10,7 @@ if (missionNamespace getVariable ["Tooth_reinforced", false]) exitWith {[_caller
 
 // find if there's a safe landing position nearby
 private _callerPos = getPos _caller;
-private _safePos = [_callerPos, 0.0, 300.0, 30.0, 0, 0.4, 0, [], [[0,0,0], [0,0,0]]] call BIS_fnc_findSafePos;
+private _safePos = [_callerPos, 0.0, 200.0, 25.0, 0, 0.5, 0, [], [[0,0,0], [0,0,0]]] call BIS_fnc_findSafePos;
 
 // Exit if no sutable landing zone
 if (_safePos isEqualTo [0,0,0]) exitWith {[_caller,"Hold off on reinforcments for now. We need to find a clear LZ."] remoteExec ["sideChat",0,false]; diag_log "REINFORCMENT EXIT: bad LZ";};
@@ -58,6 +58,7 @@ _group1 setBehaviour 'CARELESS';
 _group1 setSpeedMode 'FULL';
 _group1 setCombatMode 'RED';
 _group1 deleteGroupWhenEmpty true;
+_group1 setGroupId [""];
 _boat1 setvariable ["State","Init"];
 
 // create squad in cargo
@@ -72,15 +73,15 @@ _assaultGrpArr append [_assaultGrp];
 } forEach _assaultGrpArr;
 
 _skillset = [
-0.1,        // aimingAccuracy
-0.3,        // aimingShake
-0.2,        // aimingSpeed
+0.3,        // aimingAccuracy
+0.1,        // aimingShake
+0.1,        // aimingSpeed
 0.2,         // spotDistance
-0.3,        // spotTime
-1,        // courage
-1,        // reloadSpeed
-1,        // commanding
-1        // general
+0.2,        // spotTime
+0.5,        // courage
+0.5,        // reloadSpeed
+0.5,        // commanding
+0.5        // general
 ];
 
 // set AI squad skill

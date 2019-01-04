@@ -16,7 +16,7 @@ class Params
         // Ultra = 3.125
 		values[]={16,8,4,2,1};
 		texts[]={"No Grass (50.0)", "Proximity (25.0)", "Normal (12.5)", "Far (6.25)", "Very Far (3.125)"};
-		default = 4;
+		default = 2;
 	};
     class Param_ViewDistance
 	{	
@@ -67,12 +67,26 @@ class Params
 		texts[]={"Disabled", "Enabled"};
 		default = 1;
 	};
+    class Param_Airdrop_Cooldown
+	{
+		title="Supply Drop Cooldown";
+		values[]={5,10,20,30};
+		texts[]={"5 minutes", "10 minutes", "20 minutes", "30 minutes"};
+		default = 20;
+	};
     class Param_Reinforcments
 	{
 		title="Add heli-inserted reinforcments for BLUFOR";
 		values[]={0,1};
 		texts[]={"Disabled", "Enabled"};
-		default = 1;
+		default = 0;
+	};
+    class Param_Reinforcments_Cooldown
+	{
+		title="Reinforcments Cooldown";
+		values[]={5,10,20,30};
+		texts[]={"5 minutes", "10 minutes", "20 minutes", "30 minutes"};
+		default = 30;
 	};
 	class LoadSaveParams {
 		title = $STR_PARAMS_LOADSAVEPARAMS;
@@ -102,7 +116,7 @@ class Params
 		title = $STR_PARAMS_DIFFICULTY;
 		values[] = { 0, 1, 2, 3, 4, 5, 6, 7 };
 		texts[] = { $STR_PARAMS_DIFFICULTY1, $STR_PARAMS_DIFFICULTY2, $STR_PARAMS_DIFFICULTY3, $STR_PARAMS_DIFFICULTY4, $STR_PARAMS_DIFFICULTY5, $STR_PARAMS_DIFFICULTY6, $STR_PARAMS_DIFFICULTY7, $STR_PARAMS_DIFFICULTY8 };
-		default = 2;
+		default = 1;
 	};
 	class Aggressivity {
 		title = $STR_AGGRESSIVITY_PARAM;
@@ -419,13 +433,13 @@ class Params
 		title = $STR_PARAMS_DEBUG_CIVINFO;
 		values[] = {0, 1};
 		texts[] = {$STR_PARAMS_DISABLED, $STR_PARAMS_ENABLED};
-		default = 0;
+		default = 1;
 	};
 	class DebugCivRep {
 		title = $STR_PARAMS_DEBUG_CIVREP;
 		values[] = {0, 1};
 		texts[] = {$STR_PARAMS_DISABLED, $STR_PARAMS_ENABLED};
-		default = 0;
+		default = 1;
 	};
 	class DebugKill {
 		title = $STR_PARAMS_DEBUG_KILL;
@@ -437,13 +451,13 @@ class Params
 		title = $STR_PARAMS_DEBUG_LOGISTIC;
 		values[] = {0, 1};
 		texts[] = {$STR_PARAMS_DISABLED, $STR_PARAMS_ENABLED};
-		default = 0;
+		default = 1;
 	};
 	class DebugProduction {
 		title = $STR_PARAMS_DEBUG_PRODUCTION;
 		values[] = {0, 1};
 		texts[] = {$STR_PARAMS_DISABLED, $STR_PARAMS_ENABLED};
-		default = 0;
+		default = 1;
 	};
 	class DebugSave {
 		title = $STR_PARAMS_DEBUG_SAVE;
