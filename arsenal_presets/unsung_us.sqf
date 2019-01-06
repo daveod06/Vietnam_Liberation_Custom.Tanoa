@@ -105,10 +105,13 @@ GRLIB_arsenal_items = [
     "UNS_USMC_BDU_S",
     "UNS_USMC_LERDL",
     "UNS_JPilot_BDU",
-    "UNS_Pilot_BDU"
+    "UNS_Pilot_BDU",
+    "U_B_FullGhillie_lsh",
+    "V_BandollierB_oli"
 ];
 
 GRLIB_arsenal_backpacks = [
 	"B_Parachute",
-    "rhssaf_alice_smb"
+    "rhssaf_alice_smb",
+    "UNS_USMC_E2"
 ];
